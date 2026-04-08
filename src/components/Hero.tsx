@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, ArrowDown } from "lucide-react";
 import { profile } from "../data";
 import profilePic from "../assets/Mahesh.png";
+import SectionBg from "./SectionBg";
 
 const GH = () => (
   <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
@@ -21,15 +22,7 @@ export default function Hero() {
 
       {/* Dark mode: deep space bg */}
       <div className="absolute inset-0 -z-10 bg-white dark:bg-[#0a0a0f]" />
-
-      {/* Grid pattern */}
-      <div className="absolute inset-0 -z-10 opacity-[0.03] dark:opacity-[0.07]"
-        style={{ backgroundImage: "linear-gradient(#6366f1 1px,transparent 1px),linear-gradient(90deg,#6366f1 1px,transparent 1px)", backgroundSize: "60px 60px" }} />
-
-      {/* Glow orbs */}
-      <div className="absolute -z-10 top-1/4 left-1/3 w-[500px] h-[500px] rounded-full bg-indigo-600/20 dark:bg-indigo-600/15 blur-[120px]" />
-      <div className="absolute -z-10 bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-cyan-400/15 dark:bg-cyan-400/10 blur-[100px]" />
-      <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-violet-500/10 blur-[80px]" />
+      <SectionBg delay="0s" />
 
       <div className="max-w-6xl mx-auto px-6 py-24 w-full grid md:grid-cols-2 gap-16 items-center">
 

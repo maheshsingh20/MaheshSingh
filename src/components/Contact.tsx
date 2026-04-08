@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Mail, Phone } from "lucide-react";
 import { profile } from "../data";
 import { SectionTitle } from "./Skills";
+import SectionBg from "./SectionBg";
 
 const GithubIcon = ({ size = 20 }: { size?: number }) => (
   <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor">
@@ -53,12 +54,9 @@ const contactLinks = [
 export default function Contact() {
   return (
     <section id="contact" className="py-28 bg-gray-50/80 dark:bg-[#0d0d14] relative overflow-hidden">
-      {/* Glow */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-indigo-500/10 dark:bg-indigo-500/5 blur-[100px] rounded-full" />
-      </div>
+      <SectionBg delay="7.5s" />
 
-      <div className="max-w-3xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
         <SectionTitle title="Get In Touch" subtitle="Let's connect" />
 
         <motion.p initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}

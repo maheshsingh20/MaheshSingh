@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { MapPin, Calendar } from "lucide-react";
 import { experience } from "../data";
 import { SectionTitle } from "./Skills";
+import SectionBg from "./SectionBg";
 
 const companyColors = [
   "from-indigo-500 to-violet-500",
@@ -11,8 +12,10 @@ const companyColors = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-28 bg-white dark:bg-[#0a0a0f]">
-      <div className="max-w-4xl mx-auto px-6">
+    <section id="experience" className="py-28 bg-white dark:bg-[#0a0a0f] relative overflow-hidden">
+      <SectionBg delay="3s" />
+
+      <div className="relative z-10 max-w-4xl mx-auto px-6">
         <SectionTitle title="Experience" subtitle="Where I've worked" />
 
         <div className="mt-14 relative">

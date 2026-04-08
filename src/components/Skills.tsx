@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { skills } from "../data";
+import SectionBg from "./SectionBg";
 
 const categoryMeta: Record<string, { color: string; bg: string; darkBg: string; icon: string }> = {
   Languages: { color: "text-violet-500", bg: "bg-violet-50", darkBg: "dark:bg-violet-500/10", icon: "⌨️" },
@@ -31,11 +32,10 @@ export function SectionTitle({ title, subtitle }: { title: string; subtitle: str
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-28 relative bg-gray-50/80 dark:bg-[#0d0d14]">
-      <div className="absolute inset-0 -z-10 opacity-[0.02] dark:opacity-[0.05]"
-        style={{ backgroundImage: "radial-gradient(#6366f1 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
+    <section id="skills" className="py-28 relative bg-gray-50/80 dark:bg-[#0d0d14] overflow-hidden">
+      <SectionBg delay="1.5s" />
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
         <SectionTitle title="Technical Skills" subtitle="What I work with" />
 
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -52,22 +52,14 @@ export default function Skills() {
                   hover:border-indigo-200 dark:hover:border-indigo-500/30
                   shadow-sm hover:shadow-xl hover:shadow-indigo-500/10
                   transition-all duration-300">
-
-                {/* Top accent line */}
                 <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-current to-transparent ${meta.color} opacity-0 group-hover:opacity-100 transition-opacity`} />
-
                 <div className="flex items-center gap-2 mb-4">
                   <span className="text-xl">{meta.icon}</span>
                   <span className={`text-xs font-bold uppercase tracking-wider ${meta.color}`}>{cat}</span>
                 </div>
-
                 <div className="flex flex-wrap gap-1.5">
                   {items.map(skill => (
-                    <span key={skill}
-                      className={`px-2.5 py-1 text-xs rounded-lg font-medium
-                        ${meta.bg} ${meta.darkBg} ${meta.color}
-                        border border-current/10 transition-all duration-200
-                        hover:scale-105`}>
+                    <span key={skill} className={`px-2.5 py-1 text-xs rounded-lg font-medium ${meta.bg} ${meta.darkBg} ${meta.color} border border-current/10 transition-all duration-200 hover:scale-105`}>
                       {skill}
                     </span>
                   ))}

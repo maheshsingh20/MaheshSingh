@@ -3,7 +3,7 @@ import type { MouseEvent } from "react";
 import { motion } from "framer-motion";
 import { projects } from "../data";
 import { SectionTitle } from "./Skills";
-import ProjectsBg from "./ProjectsBg";
+import SectionBg from "./SectionBg";
 
 const GithubIcon = () => (
   <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
@@ -73,15 +73,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-28 bg-gray-50/80 dark:bg-[#0d0d14] relative overflow-hidden">
-      {/* Animated tech background */}
-      <ProjectsBg />
-
-      {/* Background dots */}
-      <div className="absolute inset-0 z-[1] opacity-[0.025] dark:opacity-[0.06] pointer-events-none"
-        style={{ backgroundImage: "radial-gradient(#6366f1 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
-
-      {/* Ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-indigo-500/5 dark:bg-indigo-500/8 blur-[120px] rounded-full z-[1] pointer-events-none" />
+      <SectionBg delay="4.5s" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         <SectionTitle title="Projects" subtitle="Things I've built" />

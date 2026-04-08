@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { GraduationCap, Award, Users, Trophy } from "lucide-react";
 import { education, certifications, achievements, leadership } from "../data";
 import { SectionTitle } from "./Skills";
+import SectionBg from "./SectionBg";
 
 function Card({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   return (
@@ -32,8 +33,10 @@ function CardHeader({ icon: Icon, label, color }: { icon: React.ElementType; lab
 
 export default function Education() {
   return (
-    <section id="education" className="py-28 bg-white dark:bg-[#0a0a0f]">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="education" className="py-28 bg-white dark:bg-[#0a0a0f] relative overflow-hidden">
+      <SectionBg delay="6s" />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
         <SectionTitle title="Education & More" subtitle="Background & achievements" />
 
         <div className="mt-14 grid md:grid-cols-2 gap-5">
