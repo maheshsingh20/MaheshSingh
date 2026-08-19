@@ -2,7 +2,7 @@ import { Moon, Sun, Menu, X } from "lucide-react";
 import { useTheme } from "../ThemeContext";
 import { useState, useEffect } from "react";
 
-const links = ["About", "Skills", "Experience", "Projects", "Education", "Contact"];
+const links = ["About", "Skills", "Experience", "Projects", "OpenSource", "Education", "Contact"];
 
 export default function Navbar() {
   const { theme, toggle } = useTheme();
@@ -18,8 +18,8 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled
-        ? "bg-white/90 dark:bg-[#0a0a0f]/90 backdrop-blur-xl shadow-lg shadow-black/5 dark:shadow-black/30 border-b border-gray-200/50 dark:border-white/5"
-        : "bg-transparent"
+      ? "bg-white/90 dark:bg-[#0a0a0f]/90 backdrop-blur-xl shadow-lg shadow-black/5 dark:shadow-black/30 border-b border-gray-200/50 dark:border-white/5"
+      : "bg-transparent"
       }`}>
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
@@ -38,8 +38,8 @@ export default function Navbar() {
                 href={`#${l.toLowerCase()}`}
                 onClick={() => setActive(l.toLowerCase())}
                 className={`relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${active === l.toLowerCase()
-                    ? "text-indigo-500 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10"
-                    : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5"
+                  ? "text-indigo-500 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10"
+                  : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5"
                   }`}
               >
                 {l}

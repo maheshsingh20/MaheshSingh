@@ -138,7 +138,7 @@ export default function Projects() {
             </div>
           </SpotlightCard>
 
-          {/* Bottom two cards */}
+          {/* Remaining project cards */}
           <div className="grid md:grid-cols-2 gap-5">
             {projects.slice(1).map((proj, i) => (
               <SpotlightCard key={proj.name} accent={proj.accent} index={i + 1}>
