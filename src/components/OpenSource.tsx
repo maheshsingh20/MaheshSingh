@@ -78,7 +78,6 @@ const contributions = [
   },
 ];
 
-const githubUser = "maheshsingh20";
 
 export default function OpenSource() {
   return (
@@ -88,61 +87,77 @@ export default function OpenSource() {
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         <SectionTitle title="Open Source & GitHub" subtitle="Community contributions" />
 
-        {/* GitHub Stats Cards */}
+        {/* GitHub Activity Stats */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-4"
         >
-          {/* Stats card */}
-          <div className="sm:col-span-2 lg:col-span-2 rounded-2xl overflow-hidden border border-gray-100 dark:border-white/[0.07] bg-gray-50 dark:bg-white/[0.02] p-1">
-            <img
-              src={`https://github-readme-stats.vercel.app/api?username=${githubUser}&show_icons=true&count_private=true&include_all_commits=true&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=6366f1&icon_color=22d3ee&text_color=94a3b8&rank_icon=github`}
-              alt="GitHub Stats"
-              className="w-full rounded-xl dark:block hidden"
-            />
-            <img
-              src={`https://github-readme-stats.vercel.app/api?username=${githubUser}&show_icons=true&count_private=true&include_all_commits=true&theme=default&hide_border=true&bg_color=00000000&title_color=6366f1&icon_color=6366f1&text_color=374151&rank_icon=github`}
-              alt="GitHub Stats"
-              className="w-full rounded-xl dark:hidden block"
-            />
-          </div>
-
-          {/* Top languages card */}
-          <div className="rounded-2xl overflow-hidden border border-gray-100 dark:border-white/[0.07] bg-gray-50 dark:bg-white/[0.02] p-1 flex items-center">
-            <img
-              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${githubUser}&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&bg_color=00000000&title_color=6366f1&text_color=94a3b8`}
-              alt="Top Languages"
-              className="w-full rounded-xl dark:block hidden"
-            />
-            <img
-              src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${githubUser}&layout=compact&langs_count=8&theme=default&hide_border=true&bg_color=00000000&title_color=6366f1&text_color=374151`}
-              alt="Top Languages"
-              className="w-full rounded-xl dark:hidden block"
-            />
-          </div>
+          {[
+            { label: "Repositories", value: "61+", icon: "📁", color: "from-indigo-500 to-violet-500" },
+            { label: "Contributions", value: "89+", icon: "📈", color: "from-cyan-500 to-blue-500", sub: "last 12 months" },
+            { label: "OSS PRs", value: "6+", icon: "🔀", color: "from-emerald-500 to-teal-500", sub: "merged across repos" },
+            { label: "LeetCode", value: "760+", icon: "🧩", color: "from-amber-500 to-orange-500", sub: "problems solved" },
+          ].map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 + i * 0.07 }}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              className="relative overflow-hidden p-6 rounded-2xl
+                bg-gray-50 dark:bg-white/[0.02]
+                border border-gray-100 dark:border-white/[0.07]
+                hover:border-indigo-200 dark:hover:border-indigo-500/30
+                hover:shadow-xl hover:shadow-indigo-500/10
+                transition-all duration-300"
+            >
+              <div className="text-2xl mb-3">{stat.icon}</div>
+              <div className={`text-3xl font-black bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
+                {stat.value}
+              </div>
+              <div className="text-sm font-bold text-gray-700 dark:text-gray-300 mt-1">{stat.label}</div>
+              {stat.sub && <div className="text-[11px] text-gray-400 mt-0.5">{stat.sub}</div>}
+              <div className="shimmer absolute inset-0 rounded-2xl" />
+            </motion.div>
+          ))}
         </motion.div>
 
-        {/* Streak */}
+        {/* Languages bar */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="mt-4 rounded-2xl overflow-hidden border border-gray-100 dark:border-white/[0.07] bg-gray-50 dark:bg-white/[0.02] p-1"
+          className="mt-4 p-6 rounded-2xl bg-gray-50 dark:bg-white/[0.02] border border-gray-100 dark:border-white/[0.07]"
         >
-          <img
-            src={`https://streak-stats.demolab.com?user=${githubUser}&theme=tokyonight&hide_border=true&background=00000000&stroke=6366f1&ring=6366f1&fire=22d3ee&currStreakNum=94a3b8&sideNums=94a3b8&currStreakLabel=6366f1&sideLabels=6366f1&dates=94a3b8`}
-            alt="GitHub Streak"
-            className="w-full rounded-xl dark:block hidden"
-          />
-          <img
-            src={`https://streak-stats.demolab.com?user=${githubUser}&theme=default&hide_border=true&background=00000000&stroke=6366f1&ring=6366f1&fire=6366f1&currStreakNum=374151&sideNums=374151&currStreakLabel=6366f1&sideLabels=6366f1&dates=374151`}
-            alt="GitHub Streak"
-            className="w-full rounded-xl dark:hidden block"
-          />
+          <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Top Languages</p>
+          <div className="space-y-3">
+            {[
+              { lang: "TypeScript", pct: 38, color: "bg-blue-500" },
+              { lang: "Java", pct: 24, color: "bg-orange-500" },
+              { lang: "C#", pct: 18, color: "bg-violet-500" },
+              { lang: "JavaScript", pct: 12, color: "bg-yellow-400" },
+              { lang: "Python", pct: 8, color: "bg-green-500" },
+            ].map((l, i) => (
+              <div key={l.lang} className="flex items-center gap-3">
+                <span className="text-xs text-gray-500 dark:text-gray-400 w-24 shrink-0">{l.lang}</span>
+                <div className="flex-1 h-2 rounded-full bg-gray-200 dark:bg-white/10 overflow-hidden">
+                  <motion.div
+                    className={`h-full rounded-full ${l.color}`}
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${l.pct}%` }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.3 + i * 0.08, duration: 0.7, ease: "easeOut" }}
+                  />
+                </div>
+                <span className="text-xs text-gray-400 w-8 text-right">{l.pct}%</span>
+              </div>
+            ))}
+          </div>
         </motion.div>
 
         {/* Open Source Contributions */}
