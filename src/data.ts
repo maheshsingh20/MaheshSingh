@@ -119,7 +119,7 @@ export const projects = [
     category: "AI · FinTech",
     tech: ["MERN", "BullMQ", "WebSocket", "TypeScript", "LLM"],
     period: "2026",
-    github: "https://github.com/maheshsingh20/QuantForge",
+    github: "https://github.com/maheshsingh20/QuantForge---Algorithmic-Trading-Strategy-Backtesting-Platform",
     stats: [{ label: "Execution", value: "BullMQ" }, { label: "Analytics", value: "Real-time" }, { label: "Sandbox", value: "VM2" }],
     points: [
       "Built a MERN-stack platform generating and running algorithmic trading strategies with LLM assistance and sandboxed execution.",
@@ -135,7 +135,7 @@ export const projects = [
     category: "Backend · Cloud",
     tech: ["Spring Boot", "AWS", "RabbitMQ", "Prometheus", "Grafana", "Zipkin"],
     period: "2026",
-    github: "https://github.com/maheshsingh20/FinFlow",
+    github: "https://github.com/maheshsingh20/Loan-Management-System",
     stats: [{ label: "Discovery", value: "Eureka" }, { label: "Tracing", value: "Zipkin" }, { label: "Auth", value: "JWT+RBAC" }],
     points: [
       "Built a microservices loan management platform with Eureka service discovery and Spring Cloud Config for centralized configuration management.",
